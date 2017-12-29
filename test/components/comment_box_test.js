@@ -20,4 +20,25 @@ describe('Comment Box', () => {
         expect(component.find('button')).to.exist;
     });
 
+    describe('Entering some text', () => {
+        const comment1 = 'new comment';
+        const empty = '';
+
+        // console.log(comment1);
+
+        beforeEach(() => {
+            component.find('textarea').simulate('change', comment1);
+        });
+
+        it('shows text in textarea', () => {
+            expect(component.find('textarea')).to.have.value(comment1);
+        });
+
+        it('when submitted, clears the input', () => {
+            // component.find('button').simulate('click');
+            component.simulate('submit');
+            expect(component.find('textarea')).to.have.value(empty);
+        });
+    });
+
 });
