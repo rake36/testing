@@ -1,6 +1,5 @@
 import { renderComponent, expect } from '../test_helper';
 import App from '../../src/components/app';
-import CommentBox from '../../src/components/comment_box';
 // to turn on continous testing listener
 // npm run test:watch
 
@@ -26,4 +25,9 @@ describe('App', () => {
   it('has a comment box', () => {
     expect(component.find('.comment-box')).to.exist;
   });
+
+  it('has a comment list', () => {
+    expect(component.find('.comment-list')).to.exist;
+  });
+
 });
